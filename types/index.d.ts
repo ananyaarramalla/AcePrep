@@ -20,14 +20,14 @@ interface Interview {
   questions: string[];
   techstack: string[];
   createdAt: string;
-  userId: string;
+  userID: string;
   type: string;
   finalized: boolean;
 }
 
 interface CreateFeedbackParams {
   interviewId: string;
-  userId: string;
+  userID: string;
   transcript: { role: string; content: string }[];
   feedbackId?: string;
 }
@@ -40,7 +40,7 @@ interface User {
 
 interface InterviewCardProps {
   interviewId?: string;
-  userId?: string;
+  userID?: string;
   role: string;
   type: string;
   techstack: string[];
@@ -49,7 +49,7 @@ interface InterviewCardProps {
 
 interface AgentProps {
   userName: string;
-  userId?: string;
+  userID?: string;
   interviewId?: string;
   feedbackId?: string;
   type: "generate" | "interview";
@@ -63,11 +63,11 @@ interface RouteParams {
 
 interface GetFeedbackByInterviewIdParams {
   interviewId: string;
-  userId: string;
+  userID: string;
 }
 
 interface GetLatestInterviewsParams {
-  userId: string;
+  userID: string;
   limit?: number;
 }
 
