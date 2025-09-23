@@ -61,10 +61,8 @@ Interview Page
 Feedback Page
 <img width="945" height="494" alt="image" src="https://github.com/user-attachments/assets/7d46d31b-04ed-4435-8b80-b22de962b85c" />
 
-
-
-
 ## <a name="future-enhancements">🚀 Future Enhancements</a>
+
 - 🎤 Multi-language support for interviews
 - 📊 Analytics dashboard for performance tracking
 - 👥 Peer-to-peer interview practice mode
