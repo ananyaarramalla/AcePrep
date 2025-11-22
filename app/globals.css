@@ -295,19 +295,19 @@
 }
 
 @utility dark-gradient {
-    @apply bg-gradient-to-b from-[#2e1065] to-[#0f0a28];
+    @apply bg-gradient-to-b from-[#1c1b29] to-[#0b0f14];
 }
 
 @utility blue-gradient-dark {
-    @apply bg-gradient-to-b from-[#4c1d95] to-[#1e1b4b];
+    @apply bg-gradient-to-b from-[#2dd4bf] to-[#0d9488];
 }
 
 @utility blue-gradient {
-    @apply bg-gradient-to-l from-[#f5f3ff] to-[#ddd6fe];
+    @apply bg-gradient-to-l from-[#d9fdf8] to-[#99f6e4];
 }
 
 @utility border-gradient {
-    @apply bg-gradient-to-b from-[#6d28d9] to-[#a78bfa];
+    @apply bg-gradient-to-b from-[#0d9488] to-[#2dd4bf];
 }
 
 @utility pattern {
