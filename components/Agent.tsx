@@ -92,7 +92,6 @@ const Agent = ({userName, userID, type, interviewId, questions}: AgentProps) => 
         setCallStatus(CallStatus.CONNECTING);
 
         if (type === "generate") {
-
             await vapi.start(
                 undefined,
                 undefined,
@@ -101,34 +100,25 @@ const Agent = ({userName, userID, type, interviewId, questions}: AgentProps) => 
                 {
                     variableValues: {
                         username: userName,
-                        userid: userID
-                    }
+                        userid: userID,
+                    },
                 }
             );
-
         } else {
-            let formattedQuestions = "";
+            let formattedQuestions = ''
 
-            if (questions) {
+            if(questions) {
                 formattedQuestions = questions
-                    .map((q) => `- ${q}`)
-                    .join("\n");
+                    .map((question) => `- ${question}`)
+                    .join('\n');
             }
-
-            await vapi.start(
-                interviewer,
-                undefined,
-                undefined,
-                undefined,
-                {
-                    variableValues: {
-                        questions: formattedQuestions
-                    }
+            await vapi.start(interviewer, {
+                variableValues: {
+                    questions: formattedQuestions,
                 }
-            );
+            })
         }
     };
-
 
     const handleDisconnect = async () => {
         setCallStatus(CallStatus.FINISHED);
