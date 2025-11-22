@@ -63,8 +63,15 @@ Now generate exactly **${amount}** interview questions.
         await db.collection("interviews").add(interview);
 
         return Response.json({ success: true, status: 200 });
-    } catch (error) {
-        console.log(error);
-        return Response.json({ success: false, error }, { status: 500 });
-    }
+    } catch (error: unknown) {
+    const err = error as Error;
+
+    console.error("🔥 FIREBASE ERROR:", err);
+
+    return Response.json(
+        { success: false, error: err.message },
+        { status: 500 }
+    );
+}
+
 }

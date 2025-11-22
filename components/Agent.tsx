@@ -31,7 +31,7 @@ interface AgentProps {
 }
 
 
-const Agent = ({userName, userID, type, interviewId, questions}: AgentProps) => {
+const Agent = ({userName, userID, type, interviewId, questions, interviewStyle}: AgentProps) => {
     const router = useRouter();
     const [isSpeaking, setIsSpeaking]= useState(false);
     const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE);
