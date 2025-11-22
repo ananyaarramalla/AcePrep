@@ -21,6 +21,16 @@ interface SavedMessage {
     content: string;
 }
 
+interface AgentProps {
+  userName: string;
+  userID: string;
+  type: "generate" | "interview";
+  interviewId?: string;
+  questions?: string[];
+  interviewStyle?: string;
+}
+
+
 const Agent = ({userName, userID, type, interviewId, questions}: AgentProps) => {
     const router = useRouter();
     const [isSpeaking, setIsSpeaking]= useState(false);
@@ -115,6 +125,7 @@ const Agent = ({userName, userID, type, interviewId, questions}: AgentProps) => 
             await vapi.start(interviewer, {
                 variableValues: {
                     questions: formattedQuestions,
+                    interviewStyle: interviewStyle || "fast",
                 }
             })
         }
