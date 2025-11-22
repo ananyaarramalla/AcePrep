@@ -63,7 +63,7 @@ Now generate exactly **${amount}** interview questions.
       role,
       type,
       level,
-      techstack: techstack.split(","),
+      techstack: techstack.split(",").map((stack: string) => stack.trim()),
       questions,
       interviewStyle,
       userID: userid,

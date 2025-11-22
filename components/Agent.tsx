@@ -30,7 +30,6 @@ interface AgentProps {
   interviewStyle?: string;
 }
 
-
 const Agent = ({userName, userID, type, interviewId, questions, interviewStyle}: AgentProps) => {
     const router = useRouter();
     const [isSpeaking, setIsSpeaking]= useState(false);
