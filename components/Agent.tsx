@@ -93,17 +93,18 @@ const Agent = ({userName, userID, type, interviewId, questions}: AgentProps) => 
 
         if (type === "generate") {
             await vapi.start(
+                process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID!,
                 undefined,
                 undefined,
                 undefined,
-                process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!,
                 {
                     variableValues: {
-                        username: userName,
-                        userid: userID,
-                    },
+                    username: userName,
+                    userid: userID,
+                    }
                 }
             );
+
         } else {
             let formattedQuestions = ''
 
@@ -112,11 +113,15 @@ const Agent = ({userName, userID, type, interviewId, questions}: AgentProps) => 
                     .map((question) => `- ${question}`)
                     .join('\n');
             }
-            await vapi.start(interviewer, {
-                variableValues: {
-                    questions: formattedQuestions,
-                }
-            })
+            await vapi.start(
+            interviewer, 
+            undefined,
+            undefined,
+            undefined,
+            {
+                variableValues: { questions: formattedQuestions }
+            }
+            );
         }
     };
 
