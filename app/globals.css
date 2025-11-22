@@ -299,15 +299,15 @@
 }
 
 @utility blue-gradient-dark {
-    @apply bg-gradient-to-b from-[#fbbf24] to-[#ca8a04];
+    @apply bg-gradient-to-b from-[#AF8BAF] to-[#AF8BAF];
 }
 
 @utility blue-gradient {
-    @apply bg-gradient-to-l from-[#fef9c3] to-[#fef3c7];
+    @apply bg-gradient-to-l from-[#AF8BAF] to-[#AF8BAF];
 }
 
 @utility border-gradient {
-    @apply bg-gradient-to-b from-[#facc15] to-[#eab308];
+    @apply bg-gradient-to-b from-[#AF8BAF] to-[#AF8BAF];
 }
 
 
