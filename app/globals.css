@@ -295,23 +295,23 @@
 }
 
 @utility dark-gradient {
-    @apply bg-gradient-to-b from-[#1A1C20] to-[#08090D];
+    @apply bg-gradient-to-b from-[#2e1065] to-[#0f0a28];
+}
+
+@utility blue-gradient-dark {
+    @apply bg-gradient-to-b from-[#4c1d95] to-[#1e1b4b];
+}
+
+@utility blue-gradient {
+    @apply bg-gradient-to-l from-[#f5f3ff] to-[#ddd6fe];
 }
 
 @utility border-gradient {
-    @apply bg-gradient-to-b from-[#4B4D4F] to-[#4B4D4F33];
+    @apply bg-gradient-to-b from-[#6d28d9] to-[#a78bfa];
 }
 
 @utility pattern {
     @apply bg-[url('/pattern.png')] bg-top bg-no-repeat;
-}
-
-@utility blue-gradient-dark {
-    @apply bg-gradient-to-b from-[#171532] to-[#08090D];
-}
-
-@utility blue-gradient {
-    @apply bg-gradient-to-l from-[#FFFFFF] to-[#CAC5FE];
 }
 
 @utility flex-center {
