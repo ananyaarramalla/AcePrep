@@ -295,20 +295,21 @@
 }
 
 @utility dark-gradient {
-    @apply bg-gradient-to-b from-[#2e1065] to-[#0f0a28];
+    @apply bg-gradient-to-b from-[#1d0f2b] to-[#0a0710];
 }
 
 @utility blue-gradient-dark {
-    @apply bg-gradient-to-b from-[#4c1d95] to-[#1e1b4b];
+    @apply bg-gradient-to-b from-[#fbbf24] to-[#ca8a04];
 }
 
 @utility blue-gradient {
-    @apply bg-gradient-to-l from-[#f5f3ff] to-[#ddd6fe];
+    @apply bg-gradient-to-l from-[#fef9c3] to-[#fef3c7];
 }
 
 @utility border-gradient {
-    @apply bg-gradient-to-b from-[#6d28d9] to-[#a78bfa];
+    @apply bg-gradient-to-b from-[#facc15] to-[#eab308];
 }
+
 
 @utility pattern {
     @apply bg-[url('/pattern.png')] bg-top bg-no-repeat;
