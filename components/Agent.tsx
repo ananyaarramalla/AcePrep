@@ -89,39 +89,46 @@ const Agent = ({userName, userID, type, interviewId, questions}: AgentProps) => 
     }, [messages, callStatus, type, userID]);
 
     const handleCall = async () => {
-    setCallStatus(CallStatus.CONNECTING);
+        setCallStatus(CallStatus.CONNECTING);
 
-    if (type === "generate") {
-        await vapi.start(
-        process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!,
-        {
-            variableValues: {
-            username: userName,
-            userid: userID,
+        if (type === "generate") {
+
+            await vapi.start(
+                undefined,
+                undefined,
+                undefined,
+                process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!,
+                {
+                    variableValues: {
+                        username: userName,
+                        userid: userID
+                    }
+                }
+            );
+
+        } else {
+            let formattedQuestions = "";
+
+            if (questions) {
+                formattedQuestions = questions
+                    .map((q) => `- ${q}`)
+                    .join("\n");
             }
-        }
-        );
-    } else {
-        let formattedQuestions = "";
 
-        if (questions) {
-        formattedQuestions = questions
-            .map((q) => `- ${q}`)
-            .join("\n");
+            await vapi.start(
+                interviewer,
+                undefined,
+                undefined,
+                undefined,
+                {
+                    variableValues: {
+                        questions: formattedQuestions
+                    }
+                }
+            );
         }
-
-        await vapi.start(
-        process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!,
-        {
-            variableValues: {
-            questions: formattedQuestions,
-            username: userName,
-            userid: userID,
-            }
-        }
-        );
-    }
     };
+
 
     const handleDisconnect = async () => {
         setCallStatus(CallStatus.FINISHED);
